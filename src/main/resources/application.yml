@@ -6,6 +6,7 @@ spring:
           gluu:
             client-id: <client-id>
             client-secret: <client-secret>
+            client-name: <provider friendly name>
             client-authentication-method: basic
             authorization-grant-type: authorization_code
             scope:
