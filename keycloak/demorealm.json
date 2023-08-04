@@ -1,0 +1,38 @@
+{
+    "realm": "demorealm",
+    "enabled": true,
+    "registrationAllowed" : true,
+    "registrationEmailAsUsername" : false,
+    "verifyEmail" : true,
+    "loginWithEmailAllowed" : true,
+    "duplicateEmailsAllowed" : false,
+    "resetPasswordAllowed" : true,
+    "clients" : [ 
+        {
+            "name": "demoapp",
+            "clientId": "demoapp_client_id",
+            "secret": "demoapp_client_secret",
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "frontchannelLogout": true,
+            "rootUrl": "http://localhost:8081",
+            "baseUrl": "http://localhost:8081",
+            "redirectUris": [
+                "/login/oauth2/code/keycloak"
+            ],
+            "defaultClientScopes": [ ],
+            "optionalClientScopes": [ "profile", "email" ]
+        }
+    ],
+    "users" : [ {
+        "username": "demo",
+        "enabled" : true,
+        "createdTimestamp" : 1672531200000,
+        "email": "demo@identicum.com",
+        "emailVerified" : true,
+        "credentials" : [ {"type": "password", "value": "demo"} ]
+      }
+    ]
+}

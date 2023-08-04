@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${OIDC_CLIENT_ID:my_client_id}
+            client-secret: ${OIDC_CLIENT_SECRET:my_client_secret}
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - email
+              - profile
+        provider:
+          keycloak:
+            issuer-uri: ${OIDC_BASE_URL:http://idp:8080/realms/demorealm}
