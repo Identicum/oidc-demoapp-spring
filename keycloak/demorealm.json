@@ -20,8 +20,7 @@
             "rootUrl": "http://localhost:8081",
             "baseUrl": "http://localhost:8081",
             "redirectUris": [
-                "/login/oauth2/code/keycloak",
-                "/oidc-demoapp-spring/login/oauth2/code/keycloak"
+                "/login/oauth2/code/keycloak"
             ],
             "defaultClientScopes": [ ],
             "optionalClientScopes": [ "profile", "email" ]

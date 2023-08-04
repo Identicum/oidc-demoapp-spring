@@ -23,8 +23,6 @@ services:
             OIDC_BASE_URL: http://idp:8080/realms/demorealm
             OIDC_CLIENT_ID: demoapp_client_id
             OIDC_CLIENT_SECRET: demoapp_client_secret
-        volumes:
-            - ./target/oidc-demoapp-spring-1.0.war:/usr/local/tomcat/webapps/oidc-demoapp-spring.war
         depends_on:
             idp:
                 condition: service_healthy

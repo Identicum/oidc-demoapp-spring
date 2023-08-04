@@ -5,13 +5,11 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509ExtendedTrustManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -27,7 +25,7 @@ public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args)
     {
-    	logger.info("Starting app OIDC Sample App");
+    	logger.info("Starting OIDC demo app");
         disableSSLValidation();
         SpringApplication.run(Application.class, args);
     }

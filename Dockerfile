@@ -10,5 +10,8 @@ RUN mvn install -DskipTests
 # ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","./app.jar"]
 
 FROM ghcr.io/identicum/centos7-java11-tomcat:latest
-COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/oidc-demoapp-spring.war
-RUN echo "<% response.sendRedirect(\"/oidc-demoapp-spring/\"); %>" > /usr/local/tomcat/webapps/ROOT/index.jsp
+COPY --from=builder /app/target/*.war /tmp/demoapp.war
+RUN yum -y install unzip \
+ && rm -rf /usr/local/tomcat/webapps/ROOT/* \
+ && unzip -qq /tmp/demoapp.war -d /usr/local/tomcat/webapps/ROOT \
+ && rm -f /tmp/demoapp.war
